@@ -1,10 +1,10 @@
 const mongoose = require("mongoose")
-const dotenv = require("dotenv")
-// dotenv.config()
+// const dotenv = require("dotenv").config()
+
 
 // mongodb://localhost:27017/DispathCruiseLoginSignUp
 
-mongoose.connect("mongodb+srv://dolapoakamo01:NcGZunUusjEpuwc0@cluster0.ijxxrs8.mongodb.net/")
+mongoose.connect("mongodb+srv://dolapoakamo01:YcfbxZshMHh0NIM4@cluster0.ijxxrs8.mongodb.net/?retryWrites=true&w=majority")
 .then(() => {
     console.log("mongodb connected");
 })
