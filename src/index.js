@@ -33,10 +33,23 @@ app.post("/signup", async (req, res) =>{
         password: req.body.password,
         re_enter_password: req.body.re_enter_password,
     }
-    await collection.insertMany([data])
-    // const absolutePathToIndexHTML = path.join(__dirname, "..", "index.html")
-    //     res.sendFile(absolutePathToIndexHTML);    
+    try{
+
+     // Check if the email already exists in the database
+     const existingUser = await collection.findOne({ email: data.email });
+
+     if (existingUser) {
+         // Email already exists; provide feedback to the user
+         return res.render("signup", { error: "Email already exists. Please use a different email." });
+     }
+    await collection.insertMany([data])   
     res.render("login");
+    }
+    catch (error) {
+        // Handle any errors that occur during user registration
+        console.error(error);
+        res.render("signup", { error: "User registration failed. Please try again." });
+    }
 })
 
 app.post("/login", async (req, res) =>{

@@ -8,6 +8,8 @@
 </head>
 <script src="//code.tidio.co/jixrjaohqp6dcq85zcobusr92zkk7frg.js" async></script>
 <body>
+    
+  
 
     <div id="container">
         <a href="index.html" class="logo d-flex align-items-center"   >     
@@ -15,6 +17,12 @@
       </a>
       <div class="form-wrap">
         <h1 style="color: #012970;">Create An Account</h1>
+           <div class="form-group">
+                <p>  {{#if error}}
+                        <p class="error">{{error}}</p>
+                     {{/if}}
+                </p>
+            </div>
             <form action="/signup" method="post">
             <div class="form-group">
                 <label for="first-name">Name:</label>
