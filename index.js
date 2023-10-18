@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const path = require("path")
 const hbs = require("hbs")
-const collection =require("./mongodb")
+const collection =require("./src/mongodb")
 
 // const dotenv = require("dotenv")
 // dotenv.config()
