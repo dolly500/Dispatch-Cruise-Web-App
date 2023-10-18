@@ -4,6 +4,9 @@ const path = require("path")
 const hbs = require("hbs")
 const collection =require("./mongodb")
 
+// const dotenv = require("dotenv")
+// dotenv.config()
+
 const templatePath = path.join(__dirname, '../templates')
 
 app.use(express.json());

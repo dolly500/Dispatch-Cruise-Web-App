@@ -1,12 +1,16 @@
 const mongoose = require("mongoose")
+const dotenv = require("dotenv")
+// dotenv.config()
 
-mongoose.connect("mongodb://localhost:27017/DispathCruiseLoginSignUp")
+// mongodb://localhost:27017/DispathCruiseLoginSignUp
+
+mongoose.connect("mongodb+srv://dolapoakamo01:NcGZunUusjEpuwc0@cluster0.ijxxrs8.mongodb.net/")
 .then(() => {
     console.log("mongodb connected");
 })
 
 .catch(err => {
-    console.log("Failed to Connect", err);
+    console.log("Failed to Connect " + err.message);
 })
 
 const LogInSchema = new mongoose.Schema({
