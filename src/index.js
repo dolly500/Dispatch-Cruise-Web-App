@@ -11,7 +11,7 @@ const templatePath = path.join(__dirname, '../templates')
 
 app.use(express.json());
 app.set("view engine", "hbs");
-app.set("views", templatePath);
+app.set("views", templatePath); 
 app.use(express.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '..')));
