@@ -11,14 +11,19 @@
 
     <div id="container" style="margin-top: 5rem;">
         <a href="index.html" class="logo d-flex align-items-center"   >
-       
-        <span style="font-size: 35px; font-weight: bolder;"> <img width="50px" src="assets/img/logo.png" alt=""> Dispatch  Cruise </span>
-      </a>
+             <span style="font-size: 35px; font-weight: bolder;"> <img width="50px" src="assets/img/logo.png" alt=""> Dispatch  Cruise </span>
+         </a>
       <div class="form-wrap">
         
         <h1 style=" color: #012970;">Sign In</h1>
             <form action="/login" method="post">
             <div class="form-group">
+                 <div class="form-group">
+                    <p>  {{#if error}}
+                            <p class="error">{{error}}</p>
+                         {{/if}}
+                    </p>
+                </div>
                 <label for="first-name">Email:</label>
                 <input type="email" name="email" placeholder="Enter your Email Address">
             </div>

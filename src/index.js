@@ -61,11 +61,13 @@ app.post("/login", async (req, res) =>{
             res.sendFile(absolutePathToIndexHTML)
     }
     else{
-        res.render("wrong password")
+        res.render("login", {error: "wrong password"})
     }
    }
-   catch{
-    res.send("wrong details")
+   catch(error){
+    //Handle any other errors if neccessary
+    console.error(error);
+    res.send("login", {error: "wrong details"})
    }
 })
 
