@@ -42,6 +42,12 @@ app.post("/signup", async (req, res) =>{
          // Email already exists; provide feedback to the user
          return res.render("signup", { error: "Email already exists. Please use a different email." });
      }
+
+     // Check if the passwords match
+     if (data.password !== data.re_enter_password) {
+        // Passwords don't match; provide feedback to the user
+        return res.render("signup", { error: "Passwords do not match. Please make sure they match and try again." });
+    }
     await collection.insertMany([data])   
     res.render("login");
     }
