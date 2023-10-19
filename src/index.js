@@ -73,7 +73,7 @@ app.post("/login", async (req, res) =>{
    catch(error){
     //Handle any other errors if neccessary
     console.error(error);
-    res.send("login", {error: "wrong details"})
+    res.render("login", {error: "wrong details"})
    }
 })
 
