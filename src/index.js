@@ -46,7 +46,7 @@ app.post("/signup", async (req, res) =>{
      // Check if the passwords match
      if (data.password !== data.re_enter_password) {
         // Passwords don't match; provide feedback to the user
-        return res.render("signup", { error: "Passwords do not match. Please make sure they match and try again." });
+        return res.render("signup", { error: "Passwords do not match. Please make sure they match and try again!" });
     }
     await collection.insertMany([data])   
     res.render("login");
@@ -54,7 +54,7 @@ app.post("/signup", async (req, res) =>{
     catch (error) {
         // Handle any errors that occur during user registration
         console.error(error);
-        res.render("signup", { error: "User registration failed. Please try again." });
+        res.render("signup", { error: "User registration failed. Please try again!" });
     }
 })
 
@@ -67,13 +67,13 @@ app.post("/login", async (req, res) =>{
             res.sendFile(absolutePathToIndexHTML)
     }
     else{
-        res.render("login", {error: "wrong password"})
+        res.render("login", {error: "Wrong Password!"})
     }
    }
    catch(error){
     //Handle any other errors if neccessary
     console.error(error);
-    res.render("login", {error: "wrong details"})
+    res.render("login", {error: "Wrong Details!"})
    }
 })
 
