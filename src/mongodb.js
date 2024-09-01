@@ -3,8 +3,9 @@ const mongoose = require("mongoose")
 
 
 // mongodb://localhost:27017/DispathCruiseLoginSignUp
+//
 
-mongoose.connect("mongodb+srv://dolapoakamo01:YcfbxZshMHh0NIM4@cluster0.ijxxrs8.mongodb.net/?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://akamods19:NpUJ0vpqfgO3Hxsb@cluster0.03bzd.mongodb.net/")
 .then(() => {
     console.log("mongodb connected");
 })
